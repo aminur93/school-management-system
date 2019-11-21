@@ -34,6 +34,11 @@ Route::group(['middleware' => ['authen','roles'], 'roles' => ['Admin']], functio
     Route::get('/academic',['as'=>'academic','uses'=>'AcademicController@index']);
     Route::post('/academic/store',['as'=>'academic.store','uses'=>'AcademicController@store']);
     Route::get('/academic/getdata',['as'=>'academic.getData','uses'=>'AcademicController@getData']);
+    Route::post('/academic/update',['as'=>'academic.update','uses'=>'AcademicController@update']);
+    Route::get('/academic/delete-academic/{academic_id}',['uses'=>'AcademicController@destroy']);
+    
+    //Program Route
+    
 });
 
 
