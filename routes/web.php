@@ -26,8 +26,14 @@ Route::group(['middleware' => ['authen']], function (){
 
 Route::group(['middleware' => ['authen','roles'], 'roles' => ['Admin']], function (){
     
+    //Course Route
     Route::get('/course',['as'=>'course','uses'=>'CourseController@index']);
     Route::get('/course/create',['as'=>'course.create','uses'=>'CourseController@create']);
+    
+    //Academic Route
+    Route::get('/academic',['as'=>'academic','uses'=>'AcademicController@index']);
+    Route::post('/academic/store',['as'=>'academic.store','uses'=>'AcademicController@store']);
+    Route::get('/academic/getdata',['as'=>'academic.getData','uses'=>'AcademicController@getData']);
 });
 
 
